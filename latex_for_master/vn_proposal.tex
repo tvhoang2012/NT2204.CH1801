@@ -1,0 +1,77 @@
+\documentclass[letterpaper]{uitproposal}
+\usepackage[utf8]{vietnam}
+\usepackage{placeins}
+\usepackage{amsfonts}
+\usepackage{textcomp}
+\usepackage{dblfloatfix}
+\usepackage{subfig}
+\usepackage{lineno}
+\usepackage{amssymb}
+\usepackage{tabularx,booktabs}
+\usepackage{longtable, lipsum}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[sorting=nyt]{biblatex}
+\usepackage{mathtools}
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{makecell}
+\usepackage{lipsum}
+\usepackage{etoolbox}
+
+% Confif variable
+
+\title{Amazon Web Services: Architectures and Applications Development}
+\vntitle{Amazon Web Services: Kiến trúc và Ứng dụng }
+\proposaltype{Hê tính toán phân bố nâng cao}
+\supervisorname{TS. Lê Duy Tân}
+\studentname{Tô Trọng Nghĩa \\ Nguyễn Hồng Sơn \\ Tạ Việt Hoàng}
+
+
+% Config reference
+\addbibresource{references/chapter-1.bib}
+\addbibresource{references/chapter-2.bib}
+
+
+% Begin document
+
+\begin{document}
+\headerbox
+\vnproposalheader
+\vnproposalname
+\clearpage
+\counterwithin{equation}{section}
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
+\setcounter{secnumdepth}{3}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyfoot[C]{\thepage}
+
+\if @twoside
+  \fancyhead[EL,OR]{\bfseries\nouppercase\rightmark}
+\else
+  \fancyhead[R]{\bfseries\nouppercase\rightmark}
+\fi
+
+\input{proposal/vn/section1.tex}
+\input{proposal/vn/section2.tex}
+\input{proposal/vn/section3.tex}
+\input{proposal/vn/section4.tex}
+\input{proposal/vn/section5.tex}
+
+\begingroup
+\let\clearpage\relax
+\printbibliography[heading=bibintoc, title = {Tài liệu tham khảo}]
+\endgroup
+
+\end{document}
+
