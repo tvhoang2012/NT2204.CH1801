@@ -302,3 +302,10 @@ TSWLatexianTemp*
 
 docker-compose.yml
 Dockerfile
+
+bin
+include
+lib
+lib64
+pyvenv.cfg
+env
