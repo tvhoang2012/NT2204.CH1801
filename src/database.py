@@ -31,7 +31,7 @@ def create_table(query):
     else:
         return 502, connection
 
-def insert_record(connection, query):
+def insert_record(query):
     status, connection = create_connection() 
     if status == 200:
         connection = create_connection() 
@@ -42,7 +42,7 @@ def insert_record(connection, query):
     else:
         return 502, connection
 
-def select_records(connection, query):
+def select_records(query):
     status, connection = create_connection()
     if status == 200:
         cursor = connection.cursor()
@@ -51,3 +51,7 @@ def select_records(connection, query):
         return 200, rows
     else:
         return 502, connection
+
+if __name__ == '__main__':
+    status, result = select_records("show databases;")
+    print (status, result)

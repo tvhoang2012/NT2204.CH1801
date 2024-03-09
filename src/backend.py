@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import time
 import subprocess
-from . import database
+import database
 
 app = Flask(__name__)
 
@@ -34,6 +34,8 @@ def api():
         result == "Query was denied"
 
     response = {
+        'server-hostname' : get_hostname(),
+        'timestamp': int(time.time()),
         'status_code' : status,
         'message': result
     }
@@ -41,7 +43,8 @@ def api():
 
 
 def get_hostname() -> str:
-    hostname = subprocess.check_output('hostname', shell=True)
+    hostname_bytes  = subprocess.check_output('hostname', shell=True)
+    hostname = hostname_bytes.decode('utf-8').strip()
     return hostname
 
 if __name__ == '__main__':
