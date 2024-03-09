@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify
 import time
 import subprocess
 import database
+# from urllib.parse import urlparse, parse_qs
+import urllib.parse
 
 app = Flask(__name__)
 
@@ -22,6 +24,8 @@ def index():
 def api():
     action = request.args.get('action')
     query = request.args.get('query')
+    query = urllib.parse.unquote(query)
+    query = f"{query};"
 
     if action == 'create_table':
         status, result = database.create_table(query)

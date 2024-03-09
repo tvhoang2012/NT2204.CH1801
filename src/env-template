@@ -1,4 +1,4 @@
-RDS_ENDPOINT = "asdasdasdasdijadsihausd"
-USER = "cloud_demo_admin"
-PASSWORD = "sent-november-headache"
-DATABASE_NAME = "cloud-demo-database"
+RDS_ENDPOINT = asdasdasdasdijadsihausd
+USER = cloud_demo_admin
+PASSWORD = sent-november-headache
+DATABASE_NAME = cloud_demo_database
