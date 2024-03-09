@@ -1,4 +1,4 @@
-RDS_ENDPOINT = asdasdasdasdijadsihausd
+RDS_ENDPOINT = here_is_rds_end_point
 USER = cloud_demo_admin
 PASSWORD = sent-november-headache
 DATABASE_NAME = cloud_demo_database

@@ -1,5 +1,15 @@
 import mysql.connector
 
+
+def free_connection(cursor, connection):
+    try:
+        cursor.close()
+        connection.close()
+        return True
+    except mysql.connector.Error as err:
+        return str(err)
+
+
 def read_env_file(file_path='env'):
     env_vars = {}
     with open(file_path, 'r') as f:
@@ -20,13 +30,14 @@ def create_connection():
         return 200, connection
 
     except mysql.connector.Error as err:
-        return 502, err
+        return 502, str(err)
 
 def create_table(query):
     status, connection = create_connection() 
     if status == 200:
         cursor = connection.cursor()
         cursor.execute(query)
+        free_connection(cursor, connection)
         return 200, "Create table success"
     else:
         return 502, connection
@@ -38,6 +49,7 @@ def insert_record(query):
         cursor = connection.cursor()
         cursor.execute(query)
         connection.commit()
+        free_connection(cursor, connection)
         return 200, "Insert success"
     else:
         return 502, connection
@@ -47,7 +59,8 @@ def select_records(query):
     if status == 200:
         cursor = connection.cursor()
         cursor.execute(query)
-        rows = cursor.fetchall()  
+        rows = cursor.fetchall()
+        free_connection(cursor, connection)
         return 200, rows
     else:
         return 502, connection
