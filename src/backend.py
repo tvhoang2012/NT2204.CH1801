@@ -40,6 +40,7 @@ def api():
     response = {
         'server-hostname' : get_hostname(),
         'timestamp': int(time.time()),
+        'query_detail' : query,
         'status_code' : status,
         'message': result
     }
