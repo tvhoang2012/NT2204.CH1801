@@ -36,8 +36,12 @@ def create_table(query):
     status, connection = create_connection() 
     if status == 200:
         cursor = connection.cursor()
-        cursor.execute(query)
-        free_connection(cursor, connection)
+        try:
+            cursor.execute(query)
+        except mysql.connector.errors.ProgrammingError as err:
+            return 502, str(err)
+        finally:
+            free_connection(cursor, connection)
         return 200, "Create table success"
     else:
         return 502, connection
@@ -45,11 +49,14 @@ def create_table(query):
 def insert_record(query):
     status, connection = create_connection() 
     if status == 200:
-        connection = create_connection() 
         cursor = connection.cursor()
-        cursor.execute(query)
-        connection.commit()
-        free_connection(cursor, connection)
+        try:
+            cursor.execute(query)
+            connection.commit()
+        except mysql.connector.errors.ProgrammingError as err:
+            return 502, str(err)
+        finally:
+            free_connection(cursor, connection)
         return 200, "Insert success"
     else:
         return 502, connection
@@ -58,9 +65,13 @@ def select_records(query):
     status, connection = create_connection()
     if status == 200:
         cursor = connection.cursor()
-        cursor.execute(query)
-        rows = cursor.fetchall()
-        free_connection(cursor, connection)
+        try:
+            cursor.execute(query)
+            rows = cursor.fetchall()
+        except mysql.connector.errors.ProgrammingError as err:
+            return 502, str(err)
+        finally: 
+            free_connection(cursor, connection)
         return 200, rows
     else:
         return 502, connection
