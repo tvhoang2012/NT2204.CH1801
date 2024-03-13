@@ -3,4 +3,4 @@ RDS_READ_REPLICA = sing-read-replicate.c1qai6soili8.ap-southeast-1.rds.amazonaws
 USER = cloud_demo_admin
 PASSWORD = sent-november-headache
 DATABASE_NAME = cloud_demo_database
-REGION_CODE = 
+REGION_CODE = us-east-1

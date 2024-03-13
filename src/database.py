@@ -1,5 +1,5 @@
 import mysql.connector
-
+import os
 
 def free_connection(cursor, connection):
     try:
@@ -19,21 +19,21 @@ def read_env_file(file_path='env'):
     return env_vars
 
 def create_connection(is_write: bool):
-    env_vars = read_env_file()
+    # env_vars = read_env_file()
 
-    DATABASE_NAME=env_vars['DATABASE_NAME']
-
-    if env_vars['REGION_CODE'] == 'us-east-1':
-        HOST = env_vars['RDS_ENDPOINT']
-        USER=env_vars['USER']
-        PASSWORD=env_vars['PASSWORD']
+    # DATABASE_NAME=env_vars['DATABASE_NAME']
+    DATABASE_NAME = os.environ.get('DATABASE_NAME')
+    REGION_CODE = os.environ.get('REGION_CODE')
+    USER = os.environ.get('USER')
+    PASSWORD = os.environ.get('PASSWORD')
+    if REGION_CODE == 'us-east-1':
+        # HOST = env_vars['RDS_ENDPOINT']
+        HOST = os.environ.get('RDS_ENDPOINT')
     else:
-        USER=env_vars['USER']
-        PASSWORD=env_vars['PASSWORD']
         if is_write:
-            HOST = env_vars['RDS_ENDPOINT']
+            HOST = os.environ.get('RDS_ENDPOINT')
         else:
-            HOST = env_vars['RDS_READ_REPLICA']
+            HOST = os.environ.get('RDS_READ_REPLICA')
     try:
         connection = mysql.connector.connect(
             host=HOST,
