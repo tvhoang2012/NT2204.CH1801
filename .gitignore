@@ -300,8 +300,8 @@ __pycache__
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
 
-docker-compose.yml
-Dockerfile
+# docker-compose.yml
+# Dockerfile
 
 bin
 include

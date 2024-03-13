@@ -15,7 +15,9 @@ def index():
     parameters = request.args.to_dict()
     response = {
         'server-hostname' : get_hostname(),
-        'timestamp': int(time.time())
+        'timestamp': int(time.time()),
+        'course' : 'NT2204',
+        'group_ID' : '10'
     }
     
     return jsonify(response)

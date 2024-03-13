@@ -18,14 +18,28 @@ def read_env_file(file_path='env'):
             env_vars[key.strip()] = value.strip()
     return env_vars
 
-def create_connection():
+def create_connection(is_write: bool):
     env_vars = read_env_file()
+
+    DATABASE_NAME=env_vars['DATABASE_NAME']
+
+    if env_vars['REGION_CODE'] == 'us-east-1':
+        HOST = env_vars['RDS_ENDPOINT']
+        USER=env_vars['USER']
+        PASSWORD=env_vars['PASSWORD']
+    else:
+        USER=env_vars['USER']
+        PASSWORD=env_vars['PASSWORD']
+        if is_write:
+            HOST = env_vars['RDS_ENDPOINT']
+        else:
+            HOST = env_vars['RDS_READ_REPLICA']
     try:
         connection = mysql.connector.connect(
-            host=env_vars['RDS_ENDPOINT'],
-            user=env_vars['USER'],
-            password=env_vars['PASSWORD'],
-            database=env_vars['DATABASE_NAME']
+            host=HOST,
+            user=USER,
+            password=PASSWORD,
+            database=DATABASE_NAME
         )
         return 200, connection
 
@@ -33,7 +47,7 @@ def create_connection():
         return 502, str(err)
 
 def create_table(query):
-    status, connection = create_connection() 
+    status, connection = create_connection(1) 
     if status == 200:
         cursor = connection.cursor()
         try:
@@ -47,7 +61,7 @@ def create_table(query):
         return 502, connection
 
 def insert_record(query):
-    status, connection = create_connection() 
+    status, connection = create_connection(1) 
     if status == 200:
         cursor = connection.cursor()
         try:
@@ -62,7 +76,7 @@ def insert_record(query):
         return 502, connection
 
 def select_records(query):
-    status, connection = create_connection()
+    status, connection = create_connection(0)
     if status == 200:
         cursor = connection.cursor()
         try:
