@@ -2,6 +2,93 @@
 \label{introduction}
 
 \subsection{Điện toán đám mây}
+Điện toán đám mây (cloud computing) là các dịch vụ và tiện ích đi kèm mà có thể sử dụng thông qua internet. Trước đây, ĐTĐM thường được sử dụng để chỉ một phần của internet với một vài hạ tầng. Ngày nay, nó được sử dụng như là một phép ẩn dụ để chỉ toàn bộ các dịch vụ được cung cấp thông qua internet. Sự phát triển nhanh chóng của các dịch vụ ĐTĐM hỗ trợ các tính toán lớn trong một phần triệu giây mà các hệ thống truyền thống không thể đáp ứng được. Khả năng tính toán này có thể sự dụng cho nhiều mục đích khác nhau như tiền xử lý, phân tích số liệu hoặc dự báo các sự kiện trong tương lai. Thông qua internet, người dùng kết nối thiết bị của mình đến các thiết bị ảo hóa có sức mạnh xử lý khổng lồ ở bất kỳ nơi nào trên thế giới \cite{furht2010handbook}.
+
+ĐTĐM là sự tổng hợp của Distributed Computing, Parallel Computing, Utility Computing along with Network Storage, Virtualization, Load Balance, High Available và các công nghệ liên quan khác. Có nhiều định nghĩa khác nhau về ĐTĐM, một trong số định nghĩa phổ biến thường được sử đụng đó là: “ĐTĐM là một mô hình phổ biến, thuận tiện, cho phép truy cập từ mạng cục bộ tới các tài nguyên tính toán có thể tùy chỉnh cấu hình, được cung cấp và có thể sử dụng nhanh chóng với những tác động tối thiểu từ nhà cung cấp dịch vụ” \cite{mell2011nist}.
+\subsubsection{Kiến trúc của điện toán đám }
+Kiến trúc của Cloud Computing bao gồm hai phần chính \cite{geeksforgeeks}:
+\begin{enumerate}
+\item \textbf{Frontend:}
+Frontend của kiến trúc đám mây đề cập đến phía máy khách của hệ thống điện toán đám mây. Frontend bao gồm tất cả các giao diện người dùng và ứng dụng được sử dụng bởi khách hàng để truy cập các dịch vụ/tài nguyên của Cloud. Ví dụ, việc sử dụng trình duyệt web để truy cập nền tảng đám mây.
+    \begin{itemize}
+        \item \textbf{Cơ sở hạ tầng Khách hàng (Client Infrastructure):} Đây là một phần của frontend, cung cấp các ứng dụng và giao diện người dùng cần thiết để truy cập nền tảng đám mây, cung cấp giao diện người dùng đồ họa (GUI) để tương tác với Cloud.
+    \end{itemize}
+    
+\item \textbf{Backend:}
+    Backend được sử dụng bởi nhà cung cấp dịch vụ, bao gồm tài nguyên, quản lý chúng và cung cấp cơ chế bảo mật. Backend bao gồm lưu trữ lớn, các ứng dụng ảo, máy ảo, các cơ chế kiểm soát lưu lượng, mô hình triển khai, v.v.
+    \begin{itemize}
+        \item \textbf{Ứng dụng (Application):} Đề cập đến phần mềm hoặc nền tảng mà khách hàng truy cập trong môi trường Backend, cung cấp dịch vụ theo yêu cầu của khách hàng.
+        \item \textbf{Dịch vụ (Service):} Các loại dịch vụ dựa trên Cloud như SaaS, PaaS và IaaS. Quản lý loại dịch vụ mà người dùng truy cập.
+        \item \textbf{Thời gian chạy (Runtime Cloud):} Cung cấp môi trường thực thi và thời gian chạy cho máy ảo.
+        \item \textbf{Lưu trữ (Storage):} Cung cấp dịch vụ lưu trữ linh hoạt và có khả năng mở rộng cũng như quản lý dữ liệu đã lưu trữ.
+        \item \textbf{Cơ sở hạ tầng (Infrastructure):} Bao gồm các thành phần phần cứng và phần mềm của điện toán đám mây như máy chủ, lưu trữ, thiết bị mạng, phần mềm ảo hóa, v.v.
+        \item \textbf{Quản lý (Management):} Quản lý các thành phần Backend như ứng dụng, dịch vụ, Cloud Thời gian chạy, lưu trữ, cơ sở hạ tầng và các cơ chế bảo mật khác.
+        \item \textbf{Bảo mật (Security):} Thực hiện các cơ chế bảo mật trong Backend để bảo vệ tài nguyên, hệ thống, tập tin và cơ sở hạ tầng của điện toán đám mây cho người dùng cuối.
+    \end{itemize}
+\end{enumerate}
+\subsubsection{Phân loại điện toán đám mây}
+
+Cloud computing có thể được phân loại vào ba loại chính dựa trên cách mà tài nguyên máy chủ được cung cấp và quản lý. Ba loại chính này là: public cloud, riêng tư private cloud, và hybrid cloud. Dưới đây là mô tả sơ lược của mỗi loại:
+
+Cloud computing có thể được phân loại vào ba loại chính dựa trên cách mà tài nguyên máy chủ được cung cấp và quản lý. Ba loại chính này là: public cloud, riêng tư private cloud, và hybrid cloud. Dưới đây là mô tả sơ lược của mỗi loại:
+
+\textbf{Public Cloud:}
+\begin{itemize}
+\item Trong mô hình public Cloud, tài nguyên máy chủ như lưu trữ, máy chủ, và dịch vụ khác được cung cấp cho các tổ chức và cá nhân thông qua internet bởi các nhà cung cấp dịch vụ đám mây, chẳng hạn như Amazon Web Services (AWS), Microsoft Azure, hoặc Google Cloud Platform (GCP).
+\item Tài nguyên được chia sẻ giữa nhiều khách hàng khác nhau và quản lý bởi nhà cung cấp dịch vụ. Các tổ chức thường trả phí dựa trên việc sử dụng tài nguyên.
+\item Public cloud thường linh hoạt và dễ mở rộng, phù hợp cho các ứng dụng có thị trường biến động hoặc các dự án tạm thời.
+\end{itemize}
+
+\textbf{Private Cloud:}
+\begin{itemize}
+\item Private Cloud là một mô hình đám mây trong đó tài nguyên máy chủ được cung cấp và sử dụng chỉ bởi một tổ chức hoặc doanh nghiệp cụ thể.
+\item Thường được xây dựng và quản lý trên nền tảng của doanh nghiệp hoặc bởi một nhà cung cấp dịch vụ cụ thể dành riêng cho khách hàng.
+\item Cung cấp sự kiểm soát cao hơn về an ninh và quyền riêng tư, đặc biệt phù hợp với các tổ chức có yêu cầu nghiêm ngặt về bảo mật hoặc quy định pháp lý.
+\end{itemize}
+
+\textbf{Hybrid Cloud:}
+\begin{itemize}
+\item Hybrid cloud là sự kết hợp của công cộng và riêng tư cloud, cho phép tổ chức kết hợp và di chuyển dữ liệu và ứng dụng giữa các môi trường đám mây công cộng và riêng tư.
+\item Cho phép sự linh hoạt và lựa chọn trong việc triển khai ứng dụng và dịch vụ, cho phép sử dụng công cụ công cộng cho các nhu cầu linh hoạt và sử dụng riêng tư cho các dịch vụ đòi hỏi bảo mật cao.
+\item Hybrid cloud cung cấp giải pháp cho các tổ chức có các yêu cầu đặc biệt hoặc đang chuyển đổi từ môi trường truyền thống sang đám mây.
+\end{itemize}
+\subsubsection{Các loại dịch vụ điện toán đám mây}
+Các mô hình dịch vụ điện toán đám mây đều dựa trên thành phần cấu trúc cơ bản của điện toán đám mây: cung cấp tài nguyên thông qua internet. Tuy nhiên, mỗi mô hình lại có những đặc điểm khác nhau về thiết kế, mức độ linh hoạt, khả năng mở rộng, kiểm soát và quản lý. Hiện nay, có ba mô hình dịch vụ điện toán đám mây chính là SaaS, PaaS và IaaS \cite{hpe_cloud_services}:
+\begin{enumerate}
+\item \textbf{Phần mềm dưới dạng Dịch vụ (Software as a Service - SaaS):}
+\begin{itemize}
+\item \textbf{Miêu tả:} Các nhà cung cấp cung cấp cho người dùng truy cập vào các ứng dụng phần mềm được lưu trữ trên cơ sở hạ tầng đám mây.
+    \item \textbf{Đặc điểm:}
+        \begin{itemize}
+            \item Người dùng có giới hạn trong việc kiểm soát và truy cập chỉ đến phần mềm.
+            \item Nhà cung cấp quản lý tất cả các yếu tố khác như mạng, máy chủ, hệ điều hành, lưu trữ và dữ liệu.
+            \item Các ứng dụng được thiết kế để sử dụng đơn giản cho một phạm vi người dùng rộng lớn.
+        \end{itemize}
+        \item \textbf{Ví dụ:} Bộ công cụ sản xuất, phần mềm quản lý mối quan hệ khách hàng (CRM), phần mềm quản lý tài nguyên nhân sự (HRM), phần mềm quản lý dữ liệu.
+    \end{itemize}
+
+    \item \textbf{Nền tảng dưới dạng Dịch vụ (Platform as a Service - PaaS):}
+    \begin{itemize}
+        \item \textbf{Miêu tả:} Người dùng có thể truy cập vào một khung của cơ sở hạ tầng đám mây, cho phép họ triển khai các ứng dụng của riêng họ bằng các ngôn ngữ lập trình, thư viện, dịch vụ và công cụ được hỗ trợ.
+        \item \textbf{Đặc điểm:}
+        \begin{itemize}
+            \item Người dùng có kiểm soát hơn về các ứng dụng triển khai của họ, dữ liệu và có thể cài đặt các cài đặt cấu hình cho môi trường lưu trữ ứng dụng.
+            \item Nhà cung cấp quản lý mạng, máy chủ, hệ điều hành và lưu trữ.
+        \end{itemize}
+        \item \textbf{Ví dụ:} Khung cho việc phát triển ứng dụng, triển khai và quản lý.
+    \end{itemize}
+
+    \item \textbf{Cơ sở hạ tầng dưới dạng Dịch vụ (Infrastructure as a Service - IaaS):}
+    \begin{itemize}
+        \item \textbf{Miêu tả:} Người dùng có thể thiết kế môi trường hoàn chỉnh của họ bằng cách cấu hình một mạng ảo và triển khai các tài nguyên máy tính cơ bản cần thiết để chạy phần mềm trên cơ sở hạ tầng đám mây.
+        \item \textbf{Đặc điểm:}
+        \begin{itemize}
+            \item Người dùng kiểm soát hệ điều hành và việc cấu hình xử lý, lưu trữ, mạng và các tài nguyên máy tính cơ bản khác.
+            \item Nhà cung cấp quản lý mạng, máy chủ, hệ điều hành và lưu trữ, với người dùng có kiểm soát hạn chế đối với một số thành phần mạng.
+        \end{itemize}
+        \item \textbf{Ví dụ:} Máy chủ ảo, lưu trữ, tài nguyên mạng.
+    \end{itemize}
+\end{enumerate}
 
 \subsection{Amazon Web Services}
 
