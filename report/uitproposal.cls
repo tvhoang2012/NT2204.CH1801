@@ -27,7 +27,7 @@
 \newcommand{\studentname}[1]{\renewcommand{\@studentname}{#1}}
 
 \renewcommand{\thesection}{\arabic{section}}
-\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
 
 % \patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
 \def\headerbox {
