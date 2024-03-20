@@ -55,7 +55,7 @@ Cloud computing có thể được phân loại vào ba loại chính dựa trê
 \subsubsection{Các loại dịch vụ điện toán đám mây}
 Các mô hình dịch vụ điện toán đám mây đều dựa trên thành phần cấu trúc cơ bản của điện toán đám mây: cung cấp tài nguyên thông qua internet. Tuy nhiên, mỗi mô hình lại có những đặc điểm khác nhau về thiết kế, mức độ linh hoạt, khả năng mở rộng, kiểm soát và quản lý. Hiện nay, có ba mô hình dịch vụ điện toán đám mây chính là SaaS, PaaS và IaaS \cite{hpe_cloud_services}:
 \begin{enumerate}
-\item \textbf{Phần mềm dưới dạng Dịch vụ (Software as a Service - SaaS):}
+\item \textbf{Phần mềm dưới dạng dịch vụ (Software as a Service - SaaS):}
 \begin{itemize}
 \item \textbf{Miêu tả:} Các nhà cung cấp cung cấp cho người dùng truy cập vào các ứng dụng phần mềm được lưu trữ trên cơ sở hạ tầng đám mây.
     \item \textbf{Đặc điểm:}
@@ -67,7 +67,7 @@ Các mô hình dịch vụ điện toán đám mây đều dựa trên thành ph
         \item \textbf{Ví dụ:} Bộ công cụ sản xuất, phần mềm quản lý mối quan hệ khách hàng (CRM), phần mềm quản lý tài nguyên nhân sự (HRM), phần mềm quản lý dữ liệu.
     \end{itemize}
 
-    \item \textbf{Nền tảng dưới dạng Dịch vụ (Platform as a Service - PaaS):}
+    \item \textbf{Nền tảng dưới dạng dịch vụ (Platform as a Service - PaaS):}
     \begin{itemize}
         \item \textbf{Miêu tả:} Người dùng có thể truy cập vào một khung của cơ sở hạ tầng đám mây, cho phép họ triển khai các ứng dụng của riêng họ bằng các ngôn ngữ lập trình, thư viện, dịch vụ và công cụ được hỗ trợ.
         \item \textbf{Đặc điểm:}
@@ -78,7 +78,7 @@ Các mô hình dịch vụ điện toán đám mây đều dựa trên thành ph
         \item \textbf{Ví dụ:} Khung cho việc phát triển ứng dụng, triển khai và quản lý.
     \end{itemize}
 
-    \item \textbf{Cơ sở hạ tầng dưới dạng Dịch vụ (Infrastructure as a Service - IaaS):}
+    \item \textbf{Cơ sở hạ tầng dưới dạng dịch vụ (Infrastructure as a Service - IaaS):}
     \begin{itemize}
         \item \textbf{Miêu tả:} Người dùng có thể thiết kế môi trường hoàn chỉnh của họ bằng cách cấu hình một mạng ảo và triển khai các tài nguyên máy tính cơ bản cần thiết để chạy phần mềm trên cơ sở hạ tầng đám mây.
         \item \textbf{Đặc điểm:}
@@ -91,5 +91,74 @@ Các mô hình dịch vụ điện toán đám mây đều dựa trên thành ph
 \end{enumerate}
 
 \subsection{Amazon Web Services}
+AWS (Amazon Web Services) là một nền tảng điện toán đám mây toàn diện và đang phát triển do Amazon cung cấp. Nó bao gồm sự kết hợp của cơ sở hạ tầng dưới dạng dịch vụ (IaaS), nền tảng dưới dạng dịch vụ (PaaS) và các dịch vụ phần mềm dưới dạng dịch vụ (SaaS). AWS cung cấp các công cụ như sức mạnh tính toán, dịch vụ lưu trữ cơ sở dữ liệu và phân phối nội dung.
 
+Dịch vụ web của Amazon.com được ra mắt lần đầu tiên vào năm 2002 từ cơ sở hạ tầng nội bộ mà công ty đã xây dựng để xử lý các hoạt động bán lẻ trực tuyến của mình. Năm 2006, AWS bắt đầu cung cấp các dịch vụ IaaS đặc trưng của mình. AWS là một trong những công ty đầu tiên giới thiệu mô hình điện toán đám mây trả tiền theo nhu cầu sử dụng, có khả năng mở rộng quy mô để cung cấp cho người dùng khả năng điện toán, lưu trữ và thông lượng khi cần.
+
+AWS cung cấp nhiều công cụ và sản phẩm khác nhau cho doanh nghiệp và nhà phát triển phần mềm tại 245 quốc gia và vùng lãnh thổ. Các cơ quan chính phủ, tổ chức giáo dục, tổ chức phi lợi nhuận và tổ chức tư nhân sử dụng dịch vụ AWS.
+
+AWS được tách thành các dịch vụ khác nhau; mỗi cái có thể được cấu hình theo những cách khác nhau dựa trên nhu cầu của người dùng. Người dùng có thể xem các tùy chọn cấu hình và bản đồ máy chủ riêng lẻ cho dịch vụ AWS. AWS cung cấp các loại dịch vụ sau:
+\subsubsection{Availability}
+AWS cung cấp các dịch vụ từ hàng chục trung tâm dữ liệu được phân bố trên 105 khu vực sẵn có (AZes \cite{aws_ec2_availability_zones}) tại các khu vực trên thế giới. Một AZ là một địa điểm chứa nhiều trung tâm dữ liệu vật lý. Một khu vực là một bộ sưu tập các AZes ở gần nhau địa lý và được kết nối bởi các liên kết mạng có độ trễ thấp.
+
+Một doanh nghiệp sẽ lựa chọn một hoặc nhiều AZes với nhiều lý do, bao gồm tuân thủ quy định, gần với khách hàng và tối ưu hóa sẵn có. Ví dụ, một khách hàng của AWS có thể triển khai máy ảo và sao chép dữ liệu trong các AZes khác nhau để đạt được một cơ sở hạ tầng đám mây đáng tin cậy, hiệu quả về chi phí, có khả năng mở rộng chống lại sự cố của các máy chủ cá nhân và toàn bộ trung tâm dữ liệu.
+
+Amazon Elastic Compute Cloud (EC2) là một dịch vụ cung cấp máy chủ ảo - được gọi là các instance EC2 - cho khả năng tính toán. Dịch vụ EC2 cung cấp hàng chục loại instance với các năng lực và kích thước khác nhau. Chúng được tùy chỉnh cho các loại công việc, các trường hợp sử dụng và ứng dụng cụ thể, như các công việc yêu cầu nhiều bộ nhớ và tính toán tăng tốc. AWS cũng cung cấp Auto Scaling, một công cụ để tự động điều chỉnh quy mô để duy trì sức khỏe và hiệu suất của instance.
+\subsubsection{Storage}
+Amazon Simple Storage Service (S3) cung cấp bộ lưu trữ đối tượng có thể mở rộng để sao lưu, thu thập và phân tích dữ liệu. Các doanh nghiệp lưu trữ dữ liệu và tệp dưới dạng đối tượng S3 -- có thể có dung lượng lên tới 5 terabyte -- bên trong bộ chứa S3 để sắp xếp chúng một cách ngăn nắp. Doanh nghiệp có thể tiết kiệm tiền với S3 thông qua lớp lưu trữ truy cập không thường xuyên hoặc bằng cách sử dụng Amazon Glacier \cite{aws_glacier} để lưu trữ lạnh dài hạn.
+
+Amazon Elastic Block Store \cite{aws_ec2_concepts} cung cấp khối lượng lưu trữ cấp khối để lưu trữ dữ liệu liên tục khi sử dụng phiên bản EC2. Hệ thống tệp đàn hồi của Amazon cung cấp dịch vụ lưu trữ tệp dựa trên đám mây được quản lý.
+
+Doanh nghiệp cũng có thể di chuyển dữ liệu lên đám mây thông qua các thiết bị truyền tải lưu trữ, chẳng hạn như AWS Snowball, Snowball Edge và Snowmobile hoặc sử dụng AWS Storage Gateway để cho phép các ứng dụng tại chỗ truy cập dữ liệu đám mây.
+
+\subsubsection{Cơ sở dữ liệu và quản lý dữ liệu}
+Dịch vụ cơ sở dữ liệu quan hệ Amazon bao gồm các tùy chọn cho phép sử dụng MariaDB, MySQL, Oracle, PostgreSQL, SQL Server và cơ sở dữ liệu hiệu suất cao độc quyền của Amazon có tên là Amazon Aurora. Amazon Aurora \cite{aws_aurora_overview} cung cấp một hệ thống quản lý cơ sở dữ liệu quan hệ cho người dùng AWS. AWS cũng cung cấp cơ sở dữ liệu NoSQL được quản lý thông qua Amazon DynamoDB.
+
+Doanh nghiệp có thể sử dụng Amazon ElastiCache \cite{aws_elasticache} và DynamoDB Accelerator làm bộ nhớ đệm dữ liệu trong bộ nhớ và thời gian thực cho ứng dụng. Amazon Redshift cung cấp kho dữ liệu giúp các nhà phân tích dữ liệu thực hiện các nhiệm vụ thông tin kinh doanh dễ dàng hơn.
+\subsubsection{Migration và hybrid cloud}
+AWS cung cấp nhiều công cụ và dịch vụ được thiết kế để hỗ trợ người dùng di chuyển ứng dụng, cơ sở dữ liệu, máy chủ và dữ liệu vào môi trường public cloud. AWS Migration Hub cung cấp một địa điểm để giám sát và quản lý quá trình di chuyển từ môi trường trên cơ sở địa lý sang môi trường đám mây. AWS Systems Manager giúp khách hành cấu hình máy chủ tại chỗ và AWS instances.
+
+Amazon có quan hệ hợp tác với một số nhà cung cấp công nghệ khác nhau để giúp dễ dàng triển khai môi trường hybrid cloud. VMware Cloud trên AWS mang công nghệ trung tâm dữ liệu được xác định bằng phần mềm từ VMware lên môi trường đám mây AWS. Red Hat Enterprise Linux dành cho Amazon EC2 là sản phẩm quan hệ hợp tác giữa AWS và Red Hat, mở rộng hệ điều hành của Red Hat lên đám mây AWS.
+
+Sau khi ứng dụng, cơ sở dữ liệu, máy chủ và dữ liệu được di chuyển sang đám mây hoặc môi trường kết hợp, các công cụ như AWS Outposts sẽ cung cấp dịch vụ và cơ sở hạ tầng AWS trên nhiều môi trường.
+\subsubsection{Networking}
+Amazon Virtual Private Cloud \cite{aws_vpc} (Amazon VPC) cung cấp cho quản trị viên quyền kiểm soát mạng ảo để sử dụng một phần riêng biệt của đám mây AWS. AWS tự động cung cấp tài nguyên mới trong VPC để tăng cường bảo vệ.
+
+Quản trị viên có thể cân bằng lưu lượng mạng bằng dịch vụ Cân bằng tải đàn hồi, bao gồm Cân bằng tải ứng dụng và Cân bằng tải mạng. AWS cũng cung cấp một hệ thống tên miền có tên Amazon Route 53 để định tuyến người dùng cuối đến các ứng dụng.
+
+Các chuyên gia công nghệ thông tin có thể thiết lập kết nối chuyên dụng từ trung tâm dữ liệu của khách hành đến đám mây AWS thông qua AWS Direct Connect.
+\subsubsection{Những công cụ phát triển}
+Nhà phát triển có thể tận dụng các công cụ dòng lệnh AWS và các bộ công cụ phát triển phần mềm (SDKs) như AWS CloudShell để triển khai và quản lý ứng dụng và dịch vụ:
+\begin{itemize}
+    \item Giao diện dòng lệnh AWS (AWS Command Line Interface) là giao diện mã nguồn độc quyền của Amazon.
+    \item AWS Tools for PowerShell cho phép nhà phát triển quản lý các dịch vụ đám mây từ môi trường Mac, Windows và Linux.
+    \item Mô hình Ứng dụng Không máy chủ AWS (AWS Serverless Application Model) cho phép nhà phát triển mô phỏng một môi trường AWS để kiểm tra chức năng của AWS Lambda, một dịch vụ tính toán không máy chủ cho phép nhà phát triển chạy mã từ hơn 200 dịch vụ AWS và ứng dụng SaaS.
+    \item Các SDK AWS có sẵn cho nhiều nền tảng và ngôn ngữ lập trình, bao gồm Android, C++, Go, iOS, Java, JavaScript, .Net, Node.js, PHP, Python, Ruby và SAP ABAP.
+\end{itemize}
+Amazon API Gateway \cite{aws_api_gateway} cho phép một nhóm phát triển tạo, quản lý và giám sát các giao diện lập trình ứng dụng (API) tùy chỉnh để các ứng dụng truy cập dữ liệu hoặc chức năng từ các dịch vụ phía sau. API Gateway quản lý hàng nghìn cuộc gọi API đồng thời.
+AWS cũng cung cấp Amazon Elastic Transcoder, một dịch vụ chuyển đổi phương tiện đã đóng gói, và AWS Step Functions, một dịch vụ trực quan hóa luồng công việc cho các ứng dụng dựa trên microservices.
+\subsubsection{Quản lý và giám sát}
+Quản trị viên có thể quản lý và theo dõi cấu hình tài nguyên đám mây bằng cách sử dụng Quy tắc AWS Config và AWS Config. Những công cụ đó, cùng với AWS Trusted Advisor \cite{aws_trusted_advisor}, có thể giúp khách hàng tránh việc triển khai tài nguyên đám mây tốn kém và được cấu hình không đúng cách và không cần thiết.
+
+AWS cung cấp một số công cụ tự động hóa trong danh mục. Quản trị viên có thể tự động hóa việc cung cấp cơ sở hạ tầng thông qua các mẫu AWS CloudFormation, đồng thời sử dụng AWS OpsWorks for Chef Automate để tự động hóa cấu hình hệ thống và cơ sở hạ tầng.
+
+Khách hàng sử dụng dịch vụ của AWS có thể theo dõi tình trạng tài nguyên và ứng dụng bằng Amazon CloudWatch và AWS Personal Health Dashboard. Khách hàng cũng có thể sử dụng AWS CloudTrail để lưu giữ hoạt động của người dùng và các lệnh gọi API để kiểm tra, điều này có một số điểm khác biệt chính so với AWS Config.
+\subsubsection{Security}
+AWS cung cấp nhiều dịch vụ dành cho bảo mật đám mây, bao gồm AWS Identity and Access Management \cite{aws_iam}, cho phép quản trị viên xác định và quản lý quyền truy cập của người dùng vào tài nguyên. Quản trị viên cũng có thể tạo thư mục người dùng bằng Amazon Cloud Directory hoặc kết nối tài nguyên đám mây với Microsoft Active Directory hiện có bằng AWS Directory Service. Ngoài ra, dịch vụ AWS Organizations cho phép doanh nghiệp thiết lập và quản lý các chính sách cho nhiều tài khoản AWS.
+
+Amazon Web Services cũng đã giới thiệu các công cụ tự động đánh giá các rủi ro bảo mật tiềm ẩn. Amazon Inspector phân tích môi trường AWS để tìm các lỗ hổng có thể ảnh hưởng đến tính bảo mật và tuân thủ. Amazon Macie sử dụng công nghệ ML để bảo vệ dữ liệu nhạy cảm trên đám mây.
+
+AWS cũng bao gồm các công cụ và dịch vụ cung cấp khả năng mã hóa dựa trên phần mềm và phần cứng, bảo vệ chống lại các cuộc tấn công từ chối dịch vụ (DDoS) phân tán, thu thập lớp ổ cắm bảo mật và chứng chỉ Bảo mật lớp vận chuyển cũng như lọc lưu lượng truy cập có hại đến các ứng dụng web.
+
+AWS Management Console là giao diện người dùng đồ họa dựa trên trình duyệt dành cho AWS, có thể được sử dụng để quản lý tài nguyên trong điện toán đám mây và lưu trữ đám mây cũng như thông tin xác thực bảo mật. AWS Management Console có thể giao tiếp với tất cả tài nguyên AWS.
+\subsubsection{Các dịch vụ khác}
+Ngoài ra, Amazon Web Services còn cung cấp các dịch khác như:
+\begin{itemize}
+\item Quản lý và phân tích dữ liệu lớn
+\item Artificial intelligence
+\item Augmented reality (AR) và virtual reality (VR)
+\item Internet of thing
+\item Blockchain
+\item Tính toán lượng tử
+\end{itemize}
 \subsection{Các nghiên cứu và nhà cung cấp chủ yếu}
